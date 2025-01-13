@@ -79,20 +79,20 @@ def main(args):
             torch.cuda.empty_cache()
 
 
-def show_loss():
-    loadFilename = "outputs/checkpoints/PTE-GPT2/PC-5e.ckpt"
-    model_name = loadFilename.split("/")[-2]
-    ckpt = torch.load(loadFilename, map_location="cpu")
-    datalogger = DataLogger()
-    datalogger.__dict__ = ckpt["loss_logger"]
-    draw_datalogger(datalogger, model_name, "reconstruction_loss")
+# def show_loss():
+#     loadFilename = "outputs/checkpoints/PTE-GPT2/PC-5e.ckpt"
+#     model_name = loadFilename.split("/")[-2]
+#     ckpt = torch.load(loadFilename, map_location="cpu")
+#     datalogger = DataLogger()
+#     datalogger.__dict__ = ckpt["loss_logger"]
+#     draw_datalogger(datalogger, model_name, "reconstruction_loss")
 
 
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("--dataset_name", type=str)
-    # parser.add_argument("--factor", type=str, default=None)
-    # parser.add_argument("--device", type=str, default="cuda")
-    # args = parser.parse_args()
-    # main(args)
-    show_loss()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset_name", type=str)
+    parser.add_argument("--factor", type=str, default=None)
+    parser.add_argument("--device", type=str, default="cuda")
+    args = parser.parse_args()
+    main(args)
+    # show_loss()
