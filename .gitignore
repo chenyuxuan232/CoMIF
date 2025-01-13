@@ -1,0 +1,25 @@
+# ignore folder
+logs
+model_hubs
+outputs/*
+
+converted_data
+
+*/__pycache__
+
+baseline_result
+
+*.ipynb
+
+# 原始数据集
+data/Synthetic-Persona-Chat/*
+
+# */txt
+model_structure.txt
+convert_data.py
+data/Persona-Chat/personachat_truecased_full_train.json
+data/Persona-Chat/personachat_truecased_full_valid.json
+t.txt
+t.py
+outputs_old
+outputs_new
